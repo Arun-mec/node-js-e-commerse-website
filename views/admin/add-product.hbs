@@ -1,0 +1,25 @@
+<section>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            <a href="/admin"><i class="bi bi-arrow-left-circle" style="font-size: 2rem;color:black;"></i></a>
+            <form action="/admin/add-product" method="POST" enctype="multipart/form-data">
+                <legend class="text-center">Enter Product Information</legend>
+                <label for="">Title</label>
+                    <input type="text" class="form-control" name="name" id="Name" placeholder="Name">
+                <label for="">Category</label>
+                    <input type="text" class="form-control" name="category" id="Category" placeholder="Category">
+                <label for="">Price</label>
+                    <input type="number" class="form-control" name="price" id="Price" placeholder="Price">
+                <label for="">Description</label>
+                    <input type="text" class="form-control" name="description" id="Price" placeholder="Description">
+                <div class="form mt-3"><label for="">Image</label>
+                    <input type="file" name="image" id="Price" placeholder="Image">
+
+                <button type="submit" class="btn btn-secondary " style="float: right;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>

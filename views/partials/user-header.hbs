@@ -1,0 +1,55 @@
+<header>
+    <nav class="navbar navbar-expand-lg top-bar fixed navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Shopping Cart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Offer Zone</a>
+                    </li>
+                    {{#if user}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">Cart <span class="badge rounded-pill bg-warning text-dark ms-1"
+                                id="cart-count">{{cartCount}}</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Orders</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <div class="dropdown me-5">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary me-2" type="submit">Search</button>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{#if user}}
+                        {{user.fname}}
+                        {{else}}
+                        Account
+                        {{/if}}
+                    </button>
+                    <ul class="dropdown-menu me-5" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            {{#if user}}
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                            {{else}}
+                            <a class="dropdown-item" href="/login">Login</a>
+                            {{/if}}
+                        </li>
+                        <li><a class="dropdown-item" href="/signup">New User?</a></li>
+                    </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        <table class="table mt-5" style="background-color:white;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {{#each orderHistory}}
+                <tr class="p-5">
+                    <td scope="col">{{this.date}}</td>
+                    <td scope="col">{{this.deliveryDetails.address}},{{this.deliveryDetails.pincode}}</td>
+                    <td scope="col">{{this.deliveryDetails.mobile}}</td>
+                    <td scope="col">Rs. <span id='prodPrice'>{{this.totalAmt}}</span></td>
+                    <td scope="col">{{this.payment}}</td>
+                    <td scope="col">{{this.status}}</td>   
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</section>

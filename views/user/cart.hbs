@@ -1,0 +1,38 @@
+<section>
+    <div class="container">
+        <table class="table mt-5" style="background-color:white;">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr class="mb-3">
+                    <td scope="col">
+                        <img src="/public-images/{{this.product._id}}.jpg" style="height:100px;width:100px" alt="">
+                    </td>
+                    <td scope="col">{{this.product.name}}</td>
+                    <td scope="col">
+                        <button class="btn btn-secondary me-3" onclick="changeQty('{{this._id}}','{{this.product._id}}',-1)">-</button>
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class="btn btn-secondary ms-3" onclick="changeQty('{{this._id}}','{{this.product._id}}',1)">+</button>
+                    </td>
+                    <td scope="col">Rs. <span id='prodPrice'>{{this.product.price}}</span></td>
+                    <td><a href="" class="btn btn-danger" onclick="removeProduct('{{this._id}}','{{this.product._id}}')">Remove</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr>
+        <div class="w-25 p-4 float-end" style="background: white;text-align:justify;">
+            <h5 class="float-start" >Total Amount</h5>
+            <h5 class="float-end" id="total">{{totalValue}}</h5>
+            <a href="/place-order" class="btn btn-success float-end mt-3 w-100">Place Order</a>
+            <a href="/order-history/{{userId}}" class="btn btn-success float-end mt-3 w-100">Order History</a>
+        </div>
+    </div>
+</section>
